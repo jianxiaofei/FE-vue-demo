@@ -5,9 +5,9 @@
 <script>
   export default {
     name: 'v-html',
-    data () {
+    data() {
       return {}
-    }
+    },
   }
 </script>
 

@@ -16,13 +16,13 @@
 
   export default {
     components: {
-      'a-button': Button
+      'a-button': Button,
     },
     methods: {
-      goBack () {
+      goBack() {
         this.$router.go(-1)
-      }
-    }
+      },
+    },
   }
 </script>
 

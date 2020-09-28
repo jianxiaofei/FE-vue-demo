@@ -1,5 +1,5 @@
 <template>
-  <ve-wordcloud width="100%" height="80%" :data="vChartData" :settings="vSet"></ve-wordcloud>
+  <ve-wordcloud width="100%" height="80%" :data="vChartData" :settings="vSet"/>
 </template>
 
 <script>
@@ -8,23 +8,23 @@
 
   export default {
     components: {
-      VeWordcloud
+      VeWordcloud,
     },
-    data () {
+    data() {
       return {
         vSet: {
           shape: 'star',
           sizeMin: 30,
-          sizeMax: 60
+          sizeMax: 60,
         },
         vChartData: {
           columns: ['word', 'count'],
-          rows: this.getRows()
-        }
+          rows: this.getRows(),
+        },
       }
     },
     methods: {
-      getRows () {
+      getRows() {
         return [
           { word: 'visualMap', count: 22199 },
           { word: 'continuous', count: 10288 },
@@ -61,8 +61,8 @@
           { word: 'toolbox', count: 25222 },
           { word: 'geo', count: 16904 },
           { word: 'parallelAxis', count: 4029 }]
-      }
-    }
+      },
+    },
   }
 
 </script>

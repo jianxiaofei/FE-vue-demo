@@ -24,8 +24,8 @@
       Aside,
       Header,
       Layout,
-      Tags
-    }
+      Tags,
+    },
   }
 </script>
 

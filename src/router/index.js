@@ -11,11 +11,11 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     path: '/login',
-    component: () => import('@v/login')
+    component: () => import('@v/login'),
   },
   {
     path: '/',
@@ -23,72 +23,77 @@ const routes = [
     children: [
       {
         path: '/home',
-        meta: {title: '首页'},
-        component: () => import('@v/home')
+        meta: { title: '首页' },
+        component: () => import('@v/home'),
       },
       {
         path: '/visualization',
-        meta: {title: '可视化'},
-        component: () => import('@v/visualization')
+        meta: { title: '可视化' },
+        component: () => import('@v/visualization'),
       },
       {
         path: '/es6',
-        meta: {title: 'ES6'},
-        component: () => import('@v/es6/index')
+        meta: { title: 'ES6' },
+        component: () => import('@v/es6/index'),
       },
       {
         path: '/echarts',
-        meta: {title: '百度echarts'},
-        component: () => import('@v/echarts')
+        meta: { title: '百度echarts' },
+        component: () => import('@v/echarts'),
       },
       {
         path: '/v-charts',
-        meta: {title: 'v-charts'},
-        component: () => import('@v/v-charts')
+        meta: { title: 'v-charts' },
+        component: () => import('@v/v-charts'),
       },
       {
         path: '/antv',
-        meta: {title: '阿里antv'},
-        component: () => import('@v/antv')
+        meta: { title: '阿里antv' },
+        component: () => import('@v/antv'),
       },
       {
         path: '/HTML',
-        meta: {title: 'HTML'},
-        component: () => import('@v/html')
+        meta: { title: 'HTML' },
+        component: () => import('@v/html'),
       },
       {
         path: '/CSS',
-        meta: {title: 'CSS'},
-        component: () => import('@v/css')
+        meta: { title: 'CSS' },
+        component: () => import('@v/css'),
       },
       {
         path: '/JavaScript',
-        meta: {title: 'JavaScript'},
-        component: () => import('@v/javaScript')
+        meta: { title: 'JavaScript' },
+        component: () => import('@v/javaScript'),
       },
       {
         path: '/canvas',
-        meta: {title: 'canvas'},
-        component: () => import('@v/canvas')
+        meta: { title: 'canvas' },
+        component: () => import('@v/canvas'),
+      },
+      {
+        path: '/pdfPreview',
+        meta: { title: 'pdf预览' },
+        component: () => import('@v/pdfPreview'),
       },
       {
         path: '/about',
-        meta: {title: '关于'},
-        component: () => import('@v/about')
+        meta: { title: '关于' },
+        component: () => import('@v/about'),
       },
       {
         path: '*',
-        meta: {title: '404'},
-        component: () => import('@v/404')
-      }
-    ]
-  }
+        meta: { title: '404' },
+        component: () => import('@v/404'),
+      },
+    ],
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 // 路由守卫
@@ -99,7 +104,7 @@ router.beforeEach((to, from, next) => {
     } else {
       next({
         path: '/login',
-        query: {path: to.fullPath}
+        query: { path: to.fullPath },
       })
     }
   } else {

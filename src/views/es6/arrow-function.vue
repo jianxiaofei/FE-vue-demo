@@ -25,12 +25,11 @@
 
 <script>
 
-
 export default {
-  name: "arrow-function",
+  name: 'arrow-function',
   data() {
     return {}
-  }
+  },
 }
 </script>
 

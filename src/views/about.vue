@@ -5,9 +5,9 @@
 <script>
   export default {
     name: 'about',
-    data () {
+    data() {
       return {}
-    }
+    },
   }
 </script>
 

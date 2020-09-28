@@ -2,12 +2,12 @@ export default [
   {
     index: 'home',
     title: '首页',
-    icon: 'home'
+    icon: 'home',
   }, {
     index: 'es6',
     title: 'ES6',
     icon: 'icon-es6',
-    isIconFont: true
+    isIconFont: true,
   },
   {
     index: 'visualization',
@@ -16,44 +16,49 @@ export default [
     sub: [
       {
         index: 'echarts',
-        title: '百度echarts'
+        title: '百度echarts',
       },
       {
         index: 'v-charts',
-        title: 'v-charts'
+        title: 'v-charts',
       },
       {
         index: 'antv',
-        title: '阿里antv'
-      }
-    ]
+        title: '阿里antv',
+      },
+    ],
   }, {
     index: 'HTML',
     title: 'HTML',
-    icon: 'html5'
+    icon: 'html5',
   },
   {
     index: 'CSS',
     title: 'CSS',
     icon: 'icon-css',
-    isIconFont: true
+    isIconFont: true,
   },
   {
     index: 'JavaScript',
     title: 'JavaScript',
     icon: 'icon-javaScript',
-    isIconFont: true
+    isIconFont: true,
   },
   {
     index: 'Canvas',
     title: 'Canvas',
     icon: 'icon-canvas',
-    isIconFont: true
+    isIconFont: true,
+  },
+  {
+    index: 'pdfPreview',
+    title: 'pdf预览',
+    icon: 'desktop',
   },
   {
     index: 'about',
     title: '关于',
-    icon: 'desktop'
+    icon: 'desktop',
   },
   {
     index: 'Navigation-two',
@@ -62,7 +67,7 @@ export default [
     sub: [
       {
         index: 'option-3',
-        title: 'option 3'
+        title: 'option 3',
       },
       {
         index: 'option-4',
@@ -70,14 +75,14 @@ export default [
         sub: [
           {
             index: 'option-5',
-            title: 'option 5'
+            title: 'option 5',
           },
           {
             index: 'option-6',
-            title: 'option 6'
-          }
-        ]
-      }
-    ]
-  }
+            title: 'option 6',
+          },
+        ],
+      },
+    ],
+  },
 ]

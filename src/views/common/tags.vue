@@ -31,19 +31,19 @@
       'a-menu': Menu,
       'a-menu-item': Menu.Item,
       'a-button': Button,
-      'a-icon': Icon
+      'a-icon': Icon,
     },
-    data () {
+    data() {
       return {
-        tagsList: []
+        tagsList: [],
       }
     },
     methods: {
-      isActive (path) {
+      isActive(path) {
         return path === this.$route.fullPath
       },
       // 关闭单个标签
-      closeTags (index) {
+      closeTags(index) {
         const delItem = this.tagsList.splice(index, 1)[0]
         const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index - 1]
         if (item) {
@@ -53,18 +53,18 @@
         }
       },
       // 关闭全部标签
-      closeAll () {
+      closeAll() {
         this.tagsList = []
         this.$router.push('/')
       },
       // 关闭其他标签
-      closeOther () {
+      closeOther() {
         this.tagsList = this.tagsList.filter(item => {
           return item.path === this.$route.fullPath
         })
       },
       // 设置标签
-      setTags (route) {
+      setTags(route) {
         const isExist = this.tagsList.some(item => {
           return item.path === route.fullPath
         })
@@ -75,29 +75,29 @@
           this.tagsList.push({
             title: route.meta.title,
             path: route.fullPath,
-            name: route.matched[1].components.default.name
+            name: route.matched[1].components.default.name,
           })
         }
         bus.$emit('tags', route.fullPath)
       },
-      handleTags (command) {
+      handleTags(command) {
         console.log(command)
         command === 'other' ? this.closeOther() : this.closeAll()
-      }
+      },
     },
     computed: {
-      showTags () {
+      showTags() {
         return this.tagsList.length > 0
-      }
+      },
     },
     watch: {
-      $route (newValue, oldValue) {
+      $route(newValue, oldValue) {
         this.setTags(newValue)
-      }
+      },
     },
-    created () {
+    created() {
       this.setTags(this.$route)
-    }
+    },
   }
 
 </script>

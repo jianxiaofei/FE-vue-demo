@@ -5,9 +5,9 @@
 <script>
   export default {
     name: 'javascript',
-    data () {
+    data() {
       return {}
-    }
+    },
   }
 </script>
 

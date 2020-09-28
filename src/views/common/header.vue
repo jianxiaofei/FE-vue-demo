@@ -18,15 +18,15 @@
     components: {
       'a-icon': Icon,
       'a-badge': Badge,
-      'a-avatar': Avatar
+      'a-avatar': Avatar,
     },
-    data () {
+    data() {
       return {
         collapsed: false,
-        userName: sessionStorage.userName
+        userName: sessionStorage.userName,
       }
     },
-    methods: {}
+    methods: {},
   }
 </script>
 

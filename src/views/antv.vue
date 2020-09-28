@@ -5,9 +5,9 @@
 <script>
   export default {
     name: 'antv',
-    data () {
+    data() {
       return {}
-    }
+    },
   }
 </script>
 

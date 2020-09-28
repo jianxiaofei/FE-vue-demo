@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: "module-js",
+  name: 'module-js',
   data() {
     return {}
-  }
+  },
 }
 </script>
 

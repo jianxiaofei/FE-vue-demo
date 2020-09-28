@@ -13,10 +13,10 @@
 
 <script>
 export default {
-  name: "structure-assignment",
+  name: 'structure-assignment',
   data() {
     return {}
-  }
+  },
 }
 </script>
 

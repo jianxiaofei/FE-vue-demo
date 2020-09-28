@@ -1,6 +1,6 @@
 <template>
   <div class="view">
-    <div ref="chart" style="width: 100%;height: 800px"></div>
+    <div ref="chart" style="width: 100%;height: 800px"/>
   </div>
 </template>
 
@@ -9,14 +9,14 @@
   import axios from 'axios'
 
   export default {
-    data () {
+    data() {
       return {}
     },
-    mounted () {
+    mounted() {
       this.drawChart()
     },
     methods: {
-      drawChart () {
+      drawChart() {
         // 基于准备好的dom，初始化echarts实例
         this.myChart = ECharts.init(this.$refs.chart)
         this.myChart.showLoading()
@@ -26,7 +26,7 @@
           console.log(v)
         })
       },
-      httpData () {
+      httpData() {
         // 想要某个函数?拥有promise功能，只需让其返回一个promise即可。
         return new Promise((resolve, reject) => {
           axios.get('http://localhost:7300/mock/5f2d0c613fa98d3ede92fc59/tree-chart-demo')
@@ -41,7 +41,7 @@
             })
         })
       },
-      createCharts (data) {
+      createCharts(data) {
         ECharts.util.each(data.children, function (datum, index) {
           index % 2 === 0 && (datum.collapsed = true)
         })
@@ -49,7 +49,7 @@
         this.myChart.setOption({
           tooltip: {
             trigger: 'item',
-            triggerOn: 'mousemove'
+            triggerOn: 'mousemove',
           },
           series: [
             {
@@ -64,23 +64,23 @@
                 position: 'left',
                 verticalAlign: 'middle',
                 align: 'right',
-                fontSize: 9
+                fontSize: 9,
               },
               leaves: {
                 label: {
                   position: 'right',
                   verticalAlign: 'middle',
-                  align: 'left'
-                }
+                  align: 'left',
+                },
               },
               expandAndCollapse: true,
               animationDuration: 550,
-              animationDurationUpdate: 750
-            }
-          ]
+              animationDurationUpdate: 750,
+            },
+          ],
         })
-      }
-    }
+      },
+    },
   }
 
 </script>

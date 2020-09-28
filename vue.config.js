@@ -21,27 +21,27 @@ module.exports = {
   },
   devServer: {
     /* 本地ip地址 */
-    host: 'localhost',
+    host: '172.20.10.3',
     port: '1314',
     hot: true,
     /* 自动打开浏览器 */
     open: false,
     overlay: {
       warning: false,
-      error: true
+      error: true,
     },
     /* 跨域代理 */
     proxy: {
-      '/api': {
+      '/pdf': {
         /* 目标代理服务器地址 */
-        target: 'localhost:7300', //
+        target: 'http://image.cache.timepack.cn/', //
         /* 允许跨域 */
         changeOrigin: true,
-        ws: true,
+        ws: false,
         pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
-  }
+          '^/pdf': '', // 代理名称替换
+        },
+      },
+    },
+  },
 }

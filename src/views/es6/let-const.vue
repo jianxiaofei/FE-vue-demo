@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: "let-const",
+  name: 'let-const',
   data() {
     return {}
-  }
+  },
 }
 </script>
 

@@ -111,12 +111,11 @@
 
 <script>
 
-
 export default {
-  name: "use-extend",
+  name: 'use-extend',
   data() {
     return {}
-  }
+  },
 }
 </script>
 

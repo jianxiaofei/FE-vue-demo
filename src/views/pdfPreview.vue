@@ -21,14 +21,14 @@
 <script>
 import PDFH5 from './pdfH5'
 import { Button, Tabs } from 'ant-design-vue'
-import * as PDFJS from 'pdfjs-dist'
+const PDFJS = require('pdfjs-dist')
 console.log(PDFJS)
-PDFJS.GlobalWorkerOptions.workerSrc = require('pdfjs-dist/build/pdf.worker')
+PDFJS.workerSrc = require('pdfjs-dist/build/pdf.worker.min')
 export default {
   components: { 'a-tabs': Tabs, 'a-tab-pane': Tabs.TabPane, 'a-button': Button, PDFH5 },
   data() {
     return {
-      pdfUrl: '@/assets/dc19-07.pdf', // 这里是pdf文件地址，后台给的流文件请求地址也是可以的
+      pdfUrl: 'https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf', // 这里是pdf文件地址，后台给的流文件请求地址也是可以的
       pdfDoc: null, // pdfjs 生成的对象
       pageNum: 1, //
       pageRendering: false,
@@ -52,6 +52,7 @@ export default {
   methods: {
     init() {
       // 初始化pdf
+      console.log(this.pdfUrl)
       PDFJS.getDocument(this.pdfUrl)
         .promise.then(pdfDoc_ => {
           console.log(pdfDoc_)
@@ -132,4 +133,5 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus"></style>
+<style scoped lang="stylus">
+</style>

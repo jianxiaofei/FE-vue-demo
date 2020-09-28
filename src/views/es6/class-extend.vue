@@ -41,10 +41,10 @@
 
 <script>
 export default {
-  name: "class-extend",
+  name: 'class-extend',
   data() {
     return {}
-  }
+  },
 }
 </script>
 

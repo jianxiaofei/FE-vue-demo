@@ -33,16 +33,15 @@
 import axios from 'axios'
 
 export default {
-  name: "promise",
+  name: 'promise',
   data() {
     return {}
   },
-  mounted() {/*
+  mounted() { /*
     this.testPromise().then(res => {
       console.log(res instanceof Object ? res : JSON.parse(res))
       this.testFun()
-    }, res => console.log(res))*/
-
+    }, res => console.log(res)) */
     this.testAsync().then(result => {
       console.log(result)
     })
@@ -62,7 +61,7 @@ export default {
           if (xhr.status === 200) { // 200 = OK
             success(xhr.responseText)
           } else {
-            error("请求数据失败！", xhr.status)
+            error('请求数据失败！', xhr.status)
           }
         }
       }
@@ -74,7 +73,7 @@ export default {
       this.ajax({
         url: 'http://localhost:7300/mock/5f2d0c613fa98d3ede92fc59/promiseTest',
         success: res => rest = res,
-        error: res => rest = res
+        error: res => rest = res,
       })
       return rest
     },
@@ -84,7 +83,7 @@ export default {
         this.ajax({
           url: 'http://localhost:7300/mock/5f2d0c613fa98d3ede92fc59/promiseTest',
           success: res => resolve(res),
-          error: res => reject(res)
+          error: res => reject(res),
         })
       }).catch(e => console.log(e))
     },
@@ -105,15 +104,15 @@ export default {
       console.log('is complete！', res)
     },
     timeout(ms) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         setTimeout(resolve, ms);
       });
     },
     async asyncPrint(value, ms) {
       await this.timeout(ms);
       console.log(value);
-    }
-  }
+    },
+  },
 }
 </script>
 

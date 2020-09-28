@@ -5,9 +5,9 @@
 <script>
   export default {
     name: 'visualization',
-    data () {
+    data() {
       return {}
-    }
+    },
   }
 </script>
 

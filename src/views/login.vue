@@ -17,21 +17,21 @@
         </a-button>
       </a-form-item>
     </a-form>
-    <canvas ref="canvas1"></canvas>
+    <canvas ref="canvas1"/>
   </div>
 </template>
 
 <script>
+import { Form, Input, Icon, Button } from 'ant-design-vue'
+import md5 from 'js-md5'
+import loginBg from '@assets/canvas'
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
 
-import {Form, Input, Icon, Button} from 'ant-design-vue'
-import md5 from 'js-md5'
-import loginBg from '@assets/canvas'
-
 export default {
-  name: "login",
+  name: 'login',
   components: {
     'a-form': Form,
     'a-form-item': Form.Item,
@@ -42,9 +42,9 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, {name: 'horizontal_login'}),
-      userNameRules: ['userName', {rules: [{required: true, message: 'Please input your username!'}]}],
-      passwordRules: ['password', {rules: [{required: true, message: 'Please input your Password!'}]}],
+      form: this.$form.createForm(this, { name: 'horizontal_login' }),
+      userNameRules: ['userName', { rules: [{ required: true, message: 'Please input your username!' }] }],
+      passwordRules: ['password', { rules: [{ required: true, message: 'Please input your Password!' }] }],
     };
   },
   mounted() {
@@ -58,12 +58,12 @@ export default {
   methods: {
     // Only show error after a field is touched.
     userNameError() {
-      const {getFieldError, isFieldTouched} = this.form;
+      const { getFieldError, isFieldTouched } = this.form;
       return isFieldTouched('userName') && getFieldError('userName');
     },
     // Only show error after a field is touched.
     passwordError() {
-      const {getFieldError, isFieldTouched} = this.form;
+      const { getFieldError, isFieldTouched } = this.form;
       return isFieldTouched('password') && getFieldError('password');
     },
     handleSubmit(e) {
